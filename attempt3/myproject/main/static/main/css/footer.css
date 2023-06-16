@@ -1,0 +1,21 @@
+.footer {
+    margin: 70px 0 0 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.footer_menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.buttom_menu_footer {
+    width: 480px;
+    height: 130px;
+    background: #E5F6FF;
+    border: 1px solid #B2EDFF;
+    box-shadow: 1px 4px 4px #B3EDFF;
+    font-size: 51px;
+    font-weight: 600;
+}

@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<div class="ower_line">
+  <div class="wrapper_admin">
+
+<form method="post">
+    {% csrf_token %}
+    Подтвердите удаление
+    <h1 class="HH1">{{data.name}}</h1> 
+    <input class="button_del" type = "submit" value="Да">
+    <a class="button_del" href='/{{tableName}}'>Нет</a>
+</form>
+{% endblock %}

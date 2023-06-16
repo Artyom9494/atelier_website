@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+<!-- Представление одного сотрудника (Информация) -->
+{% block header %}
+    <div class="lyout">
+        <a href="{% url 'home' %}">
+            <img src="../../static/main/img/home.png" alt="домик" class="home_img">
+        </a>
+
+        <div class="menu">
+            <a href="{% url 'Orders' %}"><button class="buttom_menu">Заказы</button></a>
+            <a href="{% url 'Users' %}"><button class="buttom_menu">Клиенты</button></a>
+            <a href="{% url 'Employee' %}"><button class="buttom_menu">Сотрудники</button></a>
+            <a href="{% url 'Services' %}"><button class="buttom_menu">Услуги</button></a>
+        </div>
+
+        <a href="{% url 'logout' %}" class="button_in">Выйти</a>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <a class="buttom_back" href='http://127.0.0.1:8000/{{tableName}}'>Назад</a>
+
+    <div class="wrapper">
+        
+
+        <div class="info">
+            <h3 class="form_label_text one_item">Фамилия: {{ data.surname }}</h3><br>
+            <h3 class="form_label_text">Имя: {{ data.name}}</h3><br>
+            <h3 class="form_label_text">Отчество: {{ data.name2}}</h3><br>
+            <h3 class="form_label_text">Должность: {{ data.position}}</h3><br>
+            <h3 class="form_label_text">Дата рождения: {{ data.birthday }}</h3><br>
+            <h3 class="form_label_text">Телефон: {{ data.phone }}</h3><br>
+            <h3 class="form_label_text">Почта: {{ data.email }}</h3><br>
+        </div>
+        <a class="button_sab button_item" href='http://127.0.0.1:8000/update{{tableName}}/{{data.id}}'>Изменить</a>
+        <a class="button_sab button_item" href='http://127.0.0.1:8000/delete{{tableName}}/{{data.id}}'>Удалить</a>
+    </div>
+{% endblock %}
+
+ <!-- <div class="avatar_bloc">
+            <img class="avatar" src="https://cs12.pikabu.ru/post_img/2022/11/23/0/1669154284127534096.jpg" alt="photo">
+        </div> -->

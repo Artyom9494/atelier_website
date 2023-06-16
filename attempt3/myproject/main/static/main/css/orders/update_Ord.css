@@ -1,0 +1,27 @@
+select{
+    width: 200px;
+    height: 31px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+p{
+    margin: 12px 0;
+}
+.orders_users_update{
+    width: 80%;
+}
+.button_sab_update_orders{
+    align-items: start;
+}
+.wrapper_2_marg{
+    /* padding-right: 15%; */
+}
+.batten_back_q{
+    height: 200px;
+    width: 100%;
+    background: #F2FAFF;
+    padding: 0;
+}

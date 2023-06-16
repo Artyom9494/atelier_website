@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+<!-- Страница входа для админа-->
+{% block content %}
+<div class="ower_line">
+  <div class="wrapper_admin">
+
+    {% csrf_token %}
+
+    <!-- <div class="form-error">{{ form.non_field_errors }}</div>
+
+    {% for f in form %}
+      <p><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
+      <div class="form-error">{{ f.errors }}</div>
+    {% endfor %}
+    <button class="button_sab buttom_commin_admin" type="submit">Войти</button> -->
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Войти</button>
+  </form>
+  </div>
+  
+</div>
+
+{% endblock %}
+
+

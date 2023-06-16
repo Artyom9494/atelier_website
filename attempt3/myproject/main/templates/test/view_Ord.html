@@ -1,0 +1,55 @@
+{% extends 'main/base.html' %}
+<!-- общий вид Заказы -->
+{% if request.user.is_authenticated %}
+{% block header %}
+    <div class="lyout">
+        <a href="{% url 'home' %}">
+            <img src="../../static/main/img/home.png" alt="домик" class="home_img">
+        </a>
+
+        <div class="menu">
+            <a href="{% url 'Orders' %}"><button class="buttom_menu">Заказы</button></a>
+            <a href="{% url 'Users' %}"><button class="buttom_menu">Клиенты</button></a>
+            <a href="{% url 'Employee' %}"><button class="buttom_menu">Сотрудники</button></a>
+            <a href="{% url 'Services' %}"><button class="buttom_menu">Услуги</button></a>
+        </div>
+
+        <a href="{% url 'logout' %}" class="button_in">Выйти</a>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="searc_block">
+    <form class="searc_block_el" action="{% url 'SearchOrder' %}" method="get">
+        <button class="searc_block_batton" type="submit">Найти</button>
+        <input class="searc_block_input search_order" type="search" type="text" name="q" placeholder="Поиск заказа">
+    </form>
+</div>
+
+<div class="data_block_menu">
+    <p>№ Заказа</p>
+    <p>Заказчик</p>
+    <p>Статус</p>
+    <a href='http://127.0.0.1:8000/create{{tableName}}/'>Создать заказ</a>
+</div>
+
+<div class="Employee_info">
+{% for data in dataset %}
+    <div class="Employee_info_name users_info_name orders_info_name">
+        <h3 class="or_widh">{{     data.id}}</h3><br><hr>
+        <h3 class="or_widh">{{data.user_id.surname}} {{data.user_id.name}}</h3><br><hr>
+        <h3 class="or_widh">{{data.status}}</h3><br><hr>
+        <div class="Employee_info_batton users_info_batton orders_info_batton">
+            <a class="info_batton" href='http://127.0.0.1:8000/{{tableName}}/{{data.id}}'>Информация</a>
+            <a class="info_batton" href='http://127.0.0.1:8000/update{{tableName}}/{{data.id}}'>Изменить</a>
+            <a class="info_batton" href='http://127.0.0.1:8000/delete{{tableName}}/{{data.id}}'>Удалить</a>
+        </div>
+    </div>
+
+{% endfor %}
+</div>
+
+{% endblock %}
+{% else %}
+ыыыыыыыыыы
+{% endif %}

@@ -1,0 +1,43 @@
+{% extends 'main/base.html' %}
+<!-- создание записи в Сотрудники -->
+{% block header %}
+    <div class="lyout">
+        <a href="{% url 'home' %}">
+            <img src="../../static/main/img/home.png" alt="домик" class="home_img">
+        </a>
+
+        <div class="menu">
+            <a href="{% url 'Orders' %}"><button class="buttom_menu">Заказы</button></a>
+            <a href="{% url 'Users' %}"><button class="buttom_menu">Клиенты</button></a>
+            <a href="{% url 'Employee' %}"><button class="buttom_menu">Сотрудники</button></a>
+            <a href="{% url 'Services' %}"><button class="buttom_menu">Услуги</button></a>
+        </div>
+
+        <a href="{% url 'logout' %}" class="button_in">Выйти</a>
+    </div>
+{% endblock %}
+
+{% block content %}
+<form method = "post">
+
+    <a class="buttom_back" href='http://127.0.0.1:8000/{{tableName}}'>Назад</a>
+
+    <div class="wrapper">
+        {% csrf_token %}
+        <div class="form-error">{{ form.non_field_errors }}</div>
+        
+        <div class="info">
+            {% for f in form %}
+            <p><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
+            <div class="form-error">{{ f.errors }}</div>
+            {% endfor %}
+        </div>
+        <input class="button_sab  button_sab_create" type = "submit" value = "Добавить">
+    </div>
+
+</form>
+{% endblock %}
+
+   <!-- <div class="avatar_bloc">
+            <img class="avatar" src="https://media.2x2tv.ru/content/images/2022/04/------2-2.jpg" alt="photo">
+        </div> -->

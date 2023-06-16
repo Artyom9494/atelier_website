@@ -1,0 +1,34 @@
+{% extends 'main/base.html' %}
+<!-- Изменение информации Клиента -->
+{% block header %}
+    <div class="lyout">
+        <a href="{% url 'home' %}">
+            <img src="../../static/main/img/home.png" alt="домик" class="home_img">
+        </a>
+
+        <div class="menu">
+            <a href="{% url 'Orders' %}"><button class="buttom_menu">Заказы</button></a>
+            <a href="{% url 'Users' %}"><button class="buttom_menu">Клиенты</button></a>
+            <a href="{% url 'Employee' %}"><button class="buttom_menu">Сотрудники</button></a>
+            <a href="{% url 'Services' %}"><button class="buttom_menu">Услуги</button></a>
+        </div>
+
+        <a href="{% url 'logout' %}" class="button_in">Выйти</a>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+<a class="buttom_back" href='http://127.0.0.1:8000/{{tableName}}'>Назад</a>
+
+<div class="wrapper wrap_wto">
+    <form class="form-label form_label_update form_users_update wrap_wto" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+    
+        <div class="batten_back_z">
+            <input class="button_sab button_sab_update" type="submit" value="сохранить">
+        </div>
+</div>
+</form>
+{% endblock %}

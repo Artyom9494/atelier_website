@@ -1,0 +1,65 @@
+/* main */
+@import url(./header.css);
+@import url(./footer.css);
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+/* Employee */
+@import url(./emp/createEmployee.css);
+@import url(./emp/view_Emp.css);
+@import url(./emp/detail_view_Emp.css);
+@import url(./emp/update_Emp.css);
+/* Users */
+@import url(./client/view_Usr.css);
+@import url(./client/detail_view_Usr.css);
+@import url(./client/update_Usr.css);
+/* Orders */
+@import url(./orders/view_Ord.css);
+@import url(./orders/detail_view_Ord.css);
+@import url(./orders/update_Ord.css);
+@import url(./orders/create_Ord.css);
+@import url(./orders/detail_view_Ord_all.css);
+@import url(./orders/view_User_Search_Service.css);
+/* Services */
+@import url(./Services/detail_view_Srv.css);
+@import url(./Services/view_Srv.css);
+/* admin */
+@import url(./admin/admin.css);
+/* other */
+@import url(./other/about_us.css);
+@import url(./other/create_Srv.css);
+@import url(./other/delete.css);
+*{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: block;
+    box-sizing: border-box;
+    color: black;
+    /* font-family: 'Caveat', cursive;
+    font-family: 'Caveat', cursive; */
+    font-family: 'IBM Plex Mono', monospace;
+}
+head{
+    /* Это костыль не трогать)) */
+    height: 0px;
+}
+.page{
+    height: 1161px;
+    width: 1890px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body::-webkit-scrollbar{
+    width: 0;
+}
+
+.background{
+   margin-left: 10%;
+   width: 80%;
+   height: 50%;
+   background-image: url(../img/Group123.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+}

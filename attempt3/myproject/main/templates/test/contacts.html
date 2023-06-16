@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %}
+<!-- Страница Контакты на главной странице для клиента-->
+{% block header %}
+    <div class="lyout">
+        <a href="{% url 'home' %}">
+            <img src="../../static/main/img/home.png" alt="домик" class="home_img">
+        </a>
+
+        <div class="menu">
+            <a href="{% url 'about_us' %}"><button class="buttom_menu">О нас</button></a>
+            <a href="{% url 'Services_Usr' %}"><button class="buttom_menu">Услуги</button></a>
+            <!-- <a href=""><button class="buttom_menu">Прайс</button></a> -->
+            <!-- <a href=""><button class="buttom_menu">Где мы находимся</button></a> -->
+            <a href="{% url 'contacts' %}"><button class="buttom_menu">Контакты</button></a>
+        </div>
+
+        <!-- <a href="{% url 'login' %}" class="button_in">Войти</a> -->
+    </div>
+{% endblock %}
+{% block content %}
+<div class="Employee_info about_text">
+    <p>Адрес нашего ателье: г.Тихвин, улица Карла Маркса, 14 второй этаж</p>
+    <p>Телефон: +79657565244</p>
+    <p>Почта: dress_atl@mail.ru</p>
+    <p>Режим работы: понедельник - суббота с 9 до 19, воскресенье - выходной</p>
+</div>
+<div class="background"></div>
+{% endblock %}

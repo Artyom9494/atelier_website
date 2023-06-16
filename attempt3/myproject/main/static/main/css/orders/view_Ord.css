@@ -1,0 +1,28 @@
+.orders_info_name{
+    margin: 0;
+    padding: 2px 0;
+    border-bottom: 7px #fff solid;
+    display: flex;
+    width: 100%;
+    /* flex-direction: row; */
+    justify-content:space-between;
+    align-items: center;
+    /* margin-left: 96px; */
+    font-size: 36px;
+    font-weight: 700;
+}
+.orders_info_batton{
+    width: 30%;
+}
+.order_saless{
+    width: 50%;
+    text-align: center;
+}
+.search_order{
+    width: 50%;
+}
+
+.or_widh{
+    width: 23%;
+    text-align: center;
+}

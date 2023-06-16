@@ -1,0 +1,23 @@
+.text_order{
+    font-weight: 700;
+    font-size: 37px;
+    margin-top: 3.5px;
+}
+.wrapper_2{
+    display: flex;
+    flex-direction: column;
+}
+.order_batton{
+    display: flex;
+    height: 400px;
+}
+.order_info{
+    height: 244px;
+    width: 551px;
+    background-color: #fff;
+}
+.fz_text{
+    font-size: 19px;
+    line-height: 29px;
+    padding-top: 10px;
+}

@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %}
+
+{% block header %}
+    <div class="lyout">
+        <a href="{% url 'about' %}">
+            <img src="../../static/main/img/home.png" alt="домик" class="home_img">
+        </a>
+
+        <div class="menu">
+            <a href="{% url 'createEmployee' %}"><button class="buttom_menu">О нас</button></a>
+            <a href=""><button class="buttom_menu">Услуги</button></a>
+            <!-- <a href=""><button class="buttom_menu">Прайс</button></a> -->
+            <a href=""><button class="buttom_menu">Где мы находимся</button></a>
+            <a href=""><button class="buttom_menu">Как с нами связаться</button></a>
+        </div>
+
+        <!-- <a href="{% url 'about' %}" class="button_in">Войти</a> -->
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <div class="footer">
+        <div class="footer_menu">
+            <!-- <button class="buttom_menu_footer">Оформить заказ</button> -->
+            <button class="buttom_menu_footer">Проверить заказ</button>
+        </div>
+    </div>
+{% endblock %}

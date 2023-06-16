@@ -1,0 +1,53 @@
+{% extends 'main/base.html' %}
+<!-- общий вид Сотрудникики -->
+{% block header %}
+    <div class="lyout">
+        <a href="{% url 'home' %}">
+            <img src="../../static/main/img/home.png" alt="домик" class="home_img">
+        </a>
+
+        <div class="menu">
+            <a href="{% url 'Orders' %}"><button class="buttom_menu">Заказы</button></a>
+            <a href="{% url 'Users' %}"><button class="buttom_menu">Клиенты</button></a>
+            <a href="{% url 'Employee' %}"><button class="buttom_menu">Сотрудники</button></a>
+            <a href="{% url 'Services' %}"><button class="buttom_menu">Услуги</button></a>
+        </div>
+
+        <a href="{% url 'logout' %}" class="button_in">Выйти</a>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="searc_block">
+    <form class="searc_block_el" action="{% url 'SearchEmployee' %}" method="get">
+        <button class="searc_block_batton" type="submit">Найти</button>
+        <input class="searc_block_input search_emp" type="search" type="text" name="q" placeholder="Поиск сотрудника"> 
+        <a class="searc_block_batton searc_block_batton_text batton_emp" href='http://127.0.0.1:8000/create{{tableName}}'>Добавить сотрудника</a>
+    </form>
+</div>
+
+<div class="Employee_info">
+{% for data in dataset %}
+    <div class="Employee_info wrap_emp">
+        <div class="Employee_info_name ">
+            <h3>Фамилия: {{ data.surname }}</h3><br>
+            <h3>Имя: {{ data.name}}</h3><br>
+            <h3>Отчество: {{ data.name2}}</h3><br>
+            <h3>Должность: {{ data.position }}</h3><br>
+        </div>
+        <div class="Employee_info_batton pading_emp">
+        </div>
+        <div class="block_buton_delete pading_emp_del">
+            <a class="info_batton buton_delete fz" href='http://127.0.0.1:8000/{{tableName}}/{{data.id}}'>Информация</a>
+            <a class="info_batton buton_delete fz" href='http://127.0.0.1:8000/update{{tableName}}/{{data.id}}'>Изменить</a>
+            <a class="buton_delete fz" href='http://127.0.0.1:8000/delete{{tableName}}/{{data.id}}'>Удалить</a>
+        </div>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}
+
+
+<!-- <div class="avtar">
+        <img class="avtar_img" src="https://media.2x2tv.ru/content/images/2022/04/-----------5.jpg" alt="фото сотрудника">
+    </div> -->

@@ -1,0 +1,47 @@
+{% extends 'main/base.html' %}
+<!-- общий вид Услгуи для состороны клиента-->
+{% block header %}
+    <div class="lyout">
+        <a href="{% url 'home' %}">
+            <img src="../../static/main/img/home.png" alt="домик" class="home_img">
+        </a>
+
+        <div class="menu">
+            <a href="{% url 'createEmployee' %}"><button class="buttom_menu">О нас</button></a>
+            <a href="{% url 'Services_Usr' %}"><button class="buttom_menu">Услуги</button></a>
+            <!-- <a href=""><button class="buttom_menu">Прайс</button></a> -->
+            <!-- <a href=""><button class="buttom_menu">Где мы находимся</button></a> -->
+            <a href=""><button class="buttom_menu">Контакты</button></a>
+        </div>
+        <!-- <a href="{% url 'logout' %}" class="button_in">Выйти</a> -->
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="searc_block">
+    <form class="searc_block_el" action="{% url 'searchServiceByUser' %}" method="get">
+        <button class="searc_block_batton" type="submit">Найти</button>
+        <input class="searc_block_input search_order" type="search" type="text" name="q" placeholder="Поиск услуги">
+    </form>
+</div>
+
+<div class="data_block_menu">
+    <p>Название услуги</p>
+    <p>Соимость</p>
+    <!-- <p>Информация</p> -->
+</div>
+<div class="Employee_info ">
+{% for data in dataset %}
+    <div class="Employee_info_name users_info_name orders_info_name">
+        <h3 class="order_saless">{{ data.name }}</h3><br><hr>
+        <h3 class="order_saless">{{ data.price}}</h3><br><hr>
+    </div>
+    <!-- <div class="Employee_info_batton users_info_batton orders_info_batton">
+        <a class="info_batton" href='http://127.0.0.1:8000/{{tableName}}/{{data.id}}'>Информация</a> 
+        <a class="info_batton" href='http://127.0.0.1:8000/update{{tableName}}/{{data.id}}'>Изменить</a>
+        <a class="info_batton" href='http://127.0.0.1:8000/delete{{tableName}}/{{data.id}}'>Удалить</a>
+    </div>-->
+{% endfor %}
+</div>
+
+{% endblock %}

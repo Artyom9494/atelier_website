@@ -1,0 +1,20 @@
+.form_label_text{
+    margin: 26.5px 0 0 0;
+    /* font-family: Inter; */
+    font-size: 37px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.one_item{
+    margin: 40.5px 0 0 0;
+}
+.button_item{
+    padding-top: 24px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0em;
+}

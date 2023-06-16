@@ -1,0 +1,47 @@
+{% extends 'main/base.html' %}
+<!-- Изменение информации Заказа -->
+{% block header %}
+    <div class="lyout">
+        <a href="{% url 'home' %}">
+            <img src="../../static/main/img/home.png" alt="домик" class="home_img">
+        </a>
+
+        <div class="menu">
+            <a href="{% url 'Orders' %}"><button class="buttom_menu">Заказы</button></a>
+            <a href="{% url 'Users' %}"><button class="buttom_menu">Клиенты</button></a>
+            <a href="{% url 'Employee' %}"><button class="buttom_menu">Сотрудники</button></a>
+            <a href="{% url 'Services' %}"><button class="buttom_menu">Услуги</button></a>
+        </div>
+
+        <a href="{% url 'logout' %}" class="button_in">Выйти</a>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+<a class="buttom_back" href='http://127.0.0.1:8000/{{tableName}}'>Назад</a>
+
+<div class="wrapper">
+    <form class="form-label form_label_update form_users_update orders_users_update" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+    
+
+    <!-- <div class="wrapper_2 wrapper_2_marg">
+        <div class="order_batton">
+            <input class="button_sab button_sab_update button_sab_update_orders" type="submit" value="update">
+        </div> -->
+
+        <!-- <div class="order_info">
+            <h3 class="form_label_text  text_order">Комментарий: {{ data.comment}}</h3>
+        </div> -->
+        </div>
+        <div class="wrapper_2 wrapper_2_marg">
+            <div class="order_batton">
+                <div class="batten_back_q">
+                    <input class="button_sab button_sab_update button_sab_update_orders" type="submit" value="сохранить">
+                </div>
+            </div>
+    </div>
+</form>
+{% endblock %}

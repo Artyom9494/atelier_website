@@ -1,0 +1,65 @@
+.buttom_back {
+    height: 48px;
+    width: 118px;
+    margin: 12px;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.wrapper{
+    padding-left: 20px;
+    height: 772px;
+    width: 100%;
+    display: flex;
+    margin: 70px, 0;
+    background-color: #F2FAFF;
+}
+.avatar_bloc{
+    box-sizing: border-box;
+    height: 672px;
+    width: 391px;
+    margin: 43px 59px 57px 43px;
+}
+.avatar{
+    height: 672px;
+    width: 391px;
+}
+.info{
+    padding-left: 20px;
+    width: 60%;
+}
+.button_sab{
+    width: 118px;
+    height: 118px;
+    margin: 65px 69px 629px 0;
+    border: solid 3px black;
+    border-radius: 5px;
+    background-color: #F2FAFF;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.button_sab_create{
+    text-align: center;
+}
+.form-label{
+    margin: 1.5px 0 0 0;
+    /* font-family: Inter; */
+    font-size: 37px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.form-error{
+    height: 5px;
+}
+input{
+    width: 700px;
+    height: 31px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+}
